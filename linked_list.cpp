@@ -7,6 +7,7 @@ void LinkedList::remove(int item){
 			if (head -> next) {
 				head = head -> next;
 			} else {
+				delete head;
 				head = NULL;
 			}
 		} else {
@@ -20,7 +21,9 @@ void NodeLink::remove(int item, NodeLink *prev, NodeLink *current) {
 	if (value == item) {
 		if (next) {
 			prev -> next = next;
+			delete current;
 		} else {
+			delete prev -> next;
 			prev -> next = NULL;
 		}
 	} else {
@@ -41,7 +44,6 @@ void NodeLink::add(int value) {
 		next -> add(value);
 	} else {
 		next = new NodeLink({value});
-		
 	}
 }
 
