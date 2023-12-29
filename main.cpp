@@ -70,7 +70,7 @@ void Heap::bubbleDown() {
 	int leftChildIndex = (2*index) + 1;
 	int rightChildIndex = (2*index) + 2;
 	while(true) {
-		if (arr[leftChildIndex] != 0 && arr[index] > arr[leftChildIndex]) {
+		if (arr[leftChildIndex] != 0 && arr[index] > arr[leftChildIndex] && arr[leftChildIndex] < arr[rightChildIndex]) {
 			int temp;
 			temp = arr[index];
 			arr[index] = arr[leftChildIndex];
